@@ -151,7 +151,7 @@ const SKILLS3D = () => {
     ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top top",
-      end: isMobile ? "+=700" : "+=900",
+      end: isMobile ? "+=100" : "+=900",
       pin: true,
       scrub: true,
       anticipatePin: 1,

@@ -7,7 +7,7 @@ import SKILLS3D from "@/components/ui/3dphone";
 
 export default function Hero3D() {
   return (
-    <section id="hero" className="relative w-full h-[1300] md:h-[1700] font-sans overflow-visible md:overflow-hidden">
+    <section id="hero" className="relative w-full h-[1500] md:h-[1700] font-sans overflow-visible md:overflow-hidden">
       {/* SKILLS3D ocupa toda a tela, atrás do texto */}
       <div className="absolute inset-0 w-full h-[2000] z-10" id="skills3d-section">
         <SKILLS3D />

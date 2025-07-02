@@ -24,11 +24,15 @@ export const Compare = ({
   firstImageClassName,
   secondImageClassname,
   initialSliderPercentage = 50,
-  slideMode = "hover",
+  slideMode: propSlideMode = "hover",
   showHandlebar = true,
   autoplay = false,
   autoplayDuration = 5000,
 }: CompareProps) => {
+  // Detecta se está em mobile
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+  const slideMode = isMobile ? "drag" : propSlideMode;
+
   const [sliderXPercent, setSliderXPercent] = useState(initialSliderPercentage);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -152,10 +156,11 @@ const handleTouchStart = useCallback(() => {
   return (
     <div
       ref={sliderRef}
-      className={cn("w-[400px] h-[400px] overflow-hidden", className)}
+      className={cn("w-full max-w-[400px] h-[60vw] max-h-[400px] overflow-hidden", className)}
       style={{
         position: "relative",
-        cursor: slideMode === "drag" ? "grab" : "col-resize",
+        cursor: slideMode === "drag" ? (isDragging ? "grabbing" : "grab") : "col-resize",
+        touchAction: "none"
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={mouseLeaveHandler}
