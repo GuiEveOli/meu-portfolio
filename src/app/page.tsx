@@ -19,7 +19,7 @@ import { Projects } from "@/components/ui/projects";
 import { Animatedbg } from "@/components/animatedbg";
 import Contact from "@/components/ui/contact";
 
-export function NavbarDemo() {
+function NavbarDemo() {
   const navItems = [
     { name: "Experience", link: "#experience" },
     { name: "Projects", link: "#projects" },

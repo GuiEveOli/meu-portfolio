@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { AnimatePresence, motion } from "motion/react";
@@ -86,10 +85,11 @@ export const Compare = ({
   }
 
   const handleStart = useCallback(
-    (clientX: number) => {
+    () => {
       if (slideMode === "drag") {
         setIsDragging(true);
       }
+      // Optionally, you can use clientX here if needed in the future
     },
     [slideMode]
   );
@@ -116,7 +116,7 @@ export const Compare = ({
   );
 
   const handleMouseDown = useCallback(
-    (e: React.MouseEvent) => handleStart(e.clientX),
+    () => handleStart(),
     [handleStart]
   );
   const handleMouseUp = useCallback(() => handleEnd(), [handleEnd]);
@@ -125,20 +125,20 @@ export const Compare = ({
     [handleMove]
   );
 
-  const handleTouchStart = useCallback(
-    (e: React.TouchEvent) => {
+const handleTouchStart = useCallback(() => {
+  if (!autoplay) {
+    handleStart();
+  }
+}, [handleStart, autoplay]);
+
+  const handleTouchEnd = useCallback(
+    () => {
       if (!autoplay) {
-        handleStart(e.touches[0].clientX);
+        handleEnd();
       }
     },
-    [handleStart, autoplay]
+    [handleEnd, autoplay]
   );
-
-  const handleTouchEnd = useCallback(() => {
-    if (!autoplay) {
-      handleEnd();
-    }
-  }, [handleEnd, autoplay]);
 
   const handleTouchMove = useCallback(
     (e: React.TouchEvent) => {
