@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import SKILLS3D from "@/components/ui/3dphone";
-import { useEffect } from "react";
 
 
 export default function Hero3D() {

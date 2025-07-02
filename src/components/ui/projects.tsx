@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import { LayoutGrid } from "../ui/layout-grid";
 
 export function Projects() {
@@ -95,81 +95,6 @@ const SkeletonThree = () => {
   );
 };
 
-const SkeletonFour = () => {
-  return (
-    <div>
-    <p className="font-bold md:text-4xl text-xl text-white">
-        Promypet - Mobile App
-    </p>
-    <p className="font-normal text-base text-white"></p>
-    <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A native app focused on UX/UI for booking pet services and purchasing products. Features icon-based navigation, functional categories, and location integration. Fully responsive across devices.
-    </p>
-    <a
-        href="https://xd.adobe.com/view/daf86965-0d16-4106-8cf6-0b01842bcf87-8fab/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-    >
-        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-            Know more...
-        </span>
-    </a>
-
-    </div>
-  );
-};
-
-const SkeletonFive = () => {
-  return (
-    <div>
-    <p className="font-bold md:text-4xl text-xl text-white">
-        Promypet - Mobile App
-    </p>
-    <p className="font-normal text-base text-white"></p>
-    <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A native app focused on UX/UI for booking pet services and purchasing products. Features icon-based navigation, functional categories, and location integration. Fully responsive across devices.
-    </p>
-    <a
-        href="https://xd.adobe.com/view/daf86965-0d16-4106-8cf6-0b01842bcf87-8fab/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-    >
-        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-            Know more...
-        </span>
-    </a>
-    </div>
-  );
-};
-
-const SkeletonSix = () => {
-  return (
-    <div>
-    <p className="font-bold md:text-4xl text-xl text-white">
-        Promypet - Mobile App
-    </p>
-    <p className="font-normal text-base text-white"></p>
-    <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A native app focused on UX/UI for booking pet services and purchasing products. Features icon-based navigation, functional categories, and location integration. Fully responsive across devices.
-    </p>
-    <a
-        href="https://xd.adobe.com/view/daf86965-0d16-4106-8cf6-0b01842bcf87-8fab/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-    >
-        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-            Know more...
-        </span>
-    </a>
-    </div>
-  );
-};
 
 const cards = [
   {

@@ -1,14 +1,14 @@
-import { Application } from "@splinetool/runtime";
 import React, { useEffect, useRef, useState, Suspense } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import type { Application } from "@splinetool/runtime";
 gsap.registerPlugin(ScrollTrigger);
 
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 const SKILLS3D = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [app, setApp] = useState<any>();
+  const [app, setApp] = useState<Application | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   // Detecta se é mobile
@@ -119,7 +119,9 @@ const SKILLS3D = () => {
     texts.forEach((textObj, idx) => {
       if (textObj.scale && textObj.position) {
         // Defina a escala inicial
-        textObj.scale.set(0, 0, 0);
+        textObj.scale.x = 0;
+        textObj.scale.y = 0;
+        textObj.scale.z = 0;
 
         textObj.position.z = 20;
 
@@ -211,7 +213,7 @@ const SKILLS3D = () => {
     });
   }, [app, isMobile]);
 
-// ANIMAÇÕES - cell
+  // ANIMAÇÕES - cell
   useEffect(() => {
     if (!app) return;
     const cell = app.findObjectByName("cell");
@@ -250,9 +252,9 @@ const SKILLS3D = () => {
       },
     });
 
-  }, [app]);
+  }, [app, isMobile]);
 
-// ANIMAÇÕES - title1
+  // ANIMAÇÕES - title1
   useEffect(() => {
     if (!app) return;
     const TITLE1 = app.findObjectByName("TITLE1");
@@ -271,7 +273,7 @@ const SKILLS3D = () => {
       },
       });
 
-  }, [app]);
+  }, [app, isMobile]);
 
 
   // ANIMAÇÃO - GRUPODESKILLS
@@ -312,7 +314,7 @@ const SKILLS3D = () => {
       },
     });
 
-  }, [app]);
+  }, [app, isMobile]);
 
   // ANIMAÇÃO - OPACIDADE DO GRUPO DE SKILLS
   useEffect(() => {
@@ -321,7 +323,7 @@ const SKILLS3D = () => {
     if (!SKILLNAME) return;
 
     // Remove animações anteriores para evitar conflitos
-    gsap.killTweensOf(SKILLNAME.opacity);
+    gsap.killTweensOf(SKILLNAME);
 
     // Animação de opacidade
     gsap.to(SKILLNAME, {
@@ -334,7 +336,7 @@ const SKILLS3D = () => {
         scrub: true,
       },
     });
-  }, [app]);
+  }, [app, isMobile]);
 
 
   return (

@@ -23,14 +23,6 @@ interface NavBodyProps {
   visible?: boolean;
 }
 
-interface NavItemsProps {
-  items: {
-    name: string;
-    link: string;
-  }[];
-  className?: string;
-  onItemClick?: () => void;
-}
 
 interface MobileNavProps {
   children: React.ReactNode;
@@ -142,7 +134,7 @@ export const NavItems = ({
 }) => {
   return (
     <div className={cn("flex items-center justify-center space-x-4", className)}>
-      {items.map((navItem: any, idx: number) => (
+      {items.map((navItem: { name: string; link: string }, idx: number) => (
         <Link
           key={`link=${idx}`}
           href={navItem.link}
@@ -235,7 +227,6 @@ export const MobileNavMenu = ({
   children,
   className,
   isOpen,
-  onClose,
 }: MobileNavMenuProps) => {
   return (
     <AnimatePresence>
